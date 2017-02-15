@@ -1,0 +1,4 @@
+#!/bin/bash
+
+DIRECTORY=$(cd `dirname $0` && pwd)
+cp $DIRECTORY/../home/.bash_profile ~/.bash_profile

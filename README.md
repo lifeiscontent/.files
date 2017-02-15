@@ -2,7 +2,8 @@
 
 # Todo
 
-* Have script that installs brew and atom.
+1. Have script that installs brew and atom.
+2. Have script that is a facade pattern over all package managers
 
 # Setup
 

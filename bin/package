@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# TODO:
+# Make this actually work
+# I invision something along the lines of
+
+# package [apm|brew|yarn] add [Package Name]
+# package [apm|brew|yarn] install [Package Name]
+# package [apm|brew|yarn] rm [Package Name]
+
+# To install all packages
+# package install
