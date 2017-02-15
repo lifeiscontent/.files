@@ -18,4 +18,5 @@ pixman
 pkg-config
 readline
 tig
+watchman
 yarn
