@@ -1,4 +1,34 @@
 #!/bin/bash
 
-DIRECTORY=$(cd `dirname $0` && pwd)
-cp $DIRECTORY/../home/.bash_profile ~/.bash_profile
+case "$1" in
+  home)
+    cp -frv "$HOME/.files/home/" $HOME
+    ;;
+  brew)
+    source $HOME/.files/scripts/install_brew.sh
+    ;;
+  crontab)
+    source $HOME/.files/scripts/install_crontab.sh
+    ;;
+  packages)
+    brew install $(cat $HOME/.files/data/brew | xargs)
+    brew cask install $(cat $HOME/.files/data/cask | xargs)
+    apm install $(cat $HOME/.files/data/apm | xargs)
+    yarn global add $(cat $HOME/.files/data/yarn | xargs)
+    ;;
+  all)
+    cp -frv "$HOME/.files/home/" $HOME
+    source $HOME/.files/scripts/install_brew.sh
+    source $HOME/.files/scripts/install_crontab.sh
+    source $HOME/.files/scripts/install_odrive.sh
+    ;;
+  *)
+    echo $"Usage: $0 [command]
+  home        install home directory scripts
+  brew        install homebrew package manager
+  crontab     create cronjob that runs ~/.login on reboot
+  odrive      install odrive
+  packages    install packages for apm, homebrew, homebrew caskroom and yarn
+  all         run all tasks"
+    exit 1
+esac

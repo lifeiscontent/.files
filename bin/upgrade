@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case "$1" in
+  packages)
+    brew upgrade $(cat $HOME/.files/data/brew | xargs)
+    brew cask upgrade $(cat $HOME/.files/data/cask | xargs)
+    apm upgrade $(cat $HOME/.files/data/apm | xargs)
+    yarn global upgrade $(cat $HOME/.files/data/yarn | xargs)
+    ;;
+  *)
+    echo $"Usage: $0 [command]
+  packages    upgrade packages for apm, homebrew, homebrew cask and yarn"
+    exit 1
+esac

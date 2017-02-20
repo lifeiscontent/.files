@@ -1,23 +1,24 @@
 # .files
 
-# Todo
-
-1. Have script that installs brew and atom.
-2. Have script that is a facade pattern over all package managers
-
 # Setup
 
-1. Install brew and atom.
-2. Clone this directory into `~/`
+1. Clone to `$HOME/.files`
+2. Run `$HOME/.files/bin/install` to install things
 
-# Install
+# Commands
+1. Run `$HOME/.files/bin/install` to install things
+1. Run `$HOME/.files/bin/upgrade` to upgrade things
 
-1. run `brew install $(cat ~/.files/data/brew | xargs)` to install all brew packages.
-2. run `yarn install $(cat ~/.files/data/yarn | xargs)` to install all yarn packages.
-3. run `apm install $(cat ~/.files/data/apm | xargs)` to install all apm packages.
+# Install Manually
 
-# Upgrades
+1. run `brew install $(cat $HOME/.files/data/brew | xargs)` to install all homebrew packages.
+2. run `brew cask install $(cat $HOME/.files/data/cask | xargs)` to install all homebrew cask packages.
+3. run `yarn global add $(cat $HOME/.files/data/yarn | xargs)` to install all yarn packages.
+4. run `apm install $(cat $HOME/.files/data/apm | xargs)` to install all apm packages.
 
-1. run `brew upgrade $(cat ~/.files/data/brew | xargs)` to install all brew packages.
-2. run `yarn upgrade $(cat ~/.files/data/yarn | xargs)` to install all brew packages.
-3. run `apm upgrade $(cat ~/.files/data/apm | xargs)` to install all brew packages.
+# Upgrade Manually
+
+1. run `brew upgrade $(cat $HOME/.files/data/brew | xargs)` to install all homebrew packages.
+2. run `brew cask upgrade $(cat $HOME/.files/data/brew | xargs)` to install all homebrew cask packages.
+3. run `yarn global upgrade $(cat $HOME/.files/data/yarn | xargs)` to install all brew packages.
+4. run `apm upgrade $(cat $HOME/.files/data/apm | xargs)` to install all brew packages.
