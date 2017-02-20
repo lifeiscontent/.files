@@ -27,7 +27,6 @@ case "$1" in
   home        install home directory scripts
   brew        install homebrew package manager
   crontab     create cronjob that runs ~/.login on reboot
-  odrive      install odrive
   packages    install packages for apm, homebrew, homebrew caskroom and yarn
   all         run all tasks"
     exit 1
