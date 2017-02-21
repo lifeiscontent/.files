@@ -2,3 +2,5 @@
 
 
 export PATH=$PATH:$(yarn global bin)
+
+eval $(direnv hook $SHELL)
