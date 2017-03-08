@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if crontab -l | grep -q "$@"; then
+  echo "$@ already exists in crontab"
+else
+  (crontab -l 2>/dev/null; echo "$@") | crontab -
+fi

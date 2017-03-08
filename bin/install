@@ -2,25 +2,16 @@
 
 case "$1" in
   home)
-    cp -frv "$HOME/.files/home/" $HOME
+    source $HOME/.files/scripts/install_home.sh
     ;;
   brew)
     source $HOME/.files/scripts/install_brew.sh
     ;;
-  crontab)
-    source $HOME/.files/scripts/install_crontab.sh
-    ;;
   packages)
-    brew install $(cat $HOME/.files/data/brew | xargs)
-    brew cask install $(cat $HOME/.files/data/cask | xargs)
-    apm install $(cat $HOME/.files/data/apm | xargs)
-    yarn global add $(cat $HOME/.files/data/yarn | xargs)
+    source $HOME/.files/scripts/install_packages.sh
     ;;
   all)
-    cp -frv "$HOME/.files/home/" $HOME
     source $HOME/.files/scripts/install_brew.sh
-    source $HOME/.files/scripts/install_crontab.sh
-    source $HOME/.files/scripts/install_odrive.sh
     ;;
   *)
     echo $"Usage: $0 [command]

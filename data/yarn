@@ -1,2 +1,4 @@
+bower
 create-react-app
 eslint
+eslint-plugin-react
