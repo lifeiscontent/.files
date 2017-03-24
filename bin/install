@@ -12,6 +12,8 @@ case "$1" in
     ;;
   all)
     source $HOME/.files/scripts/install_brew.sh
+    source $HOME/.files/scripts/install_brew.sh
+    source $HOME/.files/scripts/install_packages.sh
     ;;
   *)
     echo $"Usage: $0 [command]
