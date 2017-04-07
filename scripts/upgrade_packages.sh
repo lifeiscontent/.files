@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew upgrade $(cat $HOME/.files/data/brew | xargs)
-brew cask upgrade $(cat $HOME/.files/data/cask | xargs)
-apm upgrade $(cat $HOME/.files/data/apm | xargs)
-yarn global upgrade $(cat $HOME/.files/data/yarn | xargs)
+$HOME/.files/scripts/run_on_data.sh brew upgrade $HOME/.files/data/brew
+$HOME/.files/scripts/run_on_data.sh brew cask upgrade $HOME/.files/data/cask
+$HOME/.files/scripts/run_on_data.sh yarn global upgrade $HOME/.files/data/yarn
+$HOME/.files/scripts/run_on_data.sh apm upgrade $HOME/.files/data/apm

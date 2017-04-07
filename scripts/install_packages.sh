@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew install $(cat $HOME/.files/data/brew | xargs)
-brew cask install $(cat $HOME/.files/data/cask | xargs)
-yarn global add $(cat $HOME/.files/data/yarn | xargs)
-apm install $(cat $HOME/.files/data/apm | xargs)
+$HOME/.files/scripts/run_on_data.sh brew install $HOME/.files/data/brew
+$HOME/.files/scripts/run_on_data.sh brew cask install $HOME/.files/data/cask
+$HOME/.files/scripts/run_on_data.sh yarn global add $HOME/.files/data/yarn
+$HOME/.files/scripts/run_on_data.sh apm install $HOME/.files/data/apm
