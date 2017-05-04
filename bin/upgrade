@@ -1,11 +1,30 @@
 #!/bin/bash
 
 case "$1" in
-  packages)
-    source $HOME/.files/scripts/upgrade_packages.sh
+  brew)
+    $HOME/.files/scripts/run_on_data.sh brew upgrade $HOME/.files/data/brew
+    ;;
+  cask)
+    $HOME/.files/scripts/run_on_data.sh brew cask upgrade $HOME/.files/data/cask
+    ;;
+  yarn)
+    $HOME/.files/scripts/run_on_data.sh yarn global upgrade $HOME/.files/data/yarn
+    ;;
+  apm)
+    $HOME/.files/scripts/run_on_data.sh apm upgrade $HOME/.files/data/apm
+    ;;
+  all)
+    $HOME/.files/scripts/run_on_data.sh brew upgrade $HOME/.files/data/brew
+    $HOME/.files/scripts/run_on_data.sh brew cask upgrade $HOME/.files/data/cask
+    $HOME/.files/scripts/run_on_data.sh yarn global upgrade $HOME/.files/data/yarn
+    $HOME/.files/scripts/run_on_data.sh apm upgrade $HOME/.files/data/apm
     ;;
   *)
     echo $"Usage: $0 [command]
-  packages    upgrade packages for apm, homebrew, homebrew cask and yarn"
+  brew        upgrade all homebrew packages.
+  cask        upgrade all homebrew cask packages.
+  yarn        upgrade all yarn packages.
+  apm         upgrade all apm packages.
+  all         upgrade packages for apm, homebrew, homebrew cask and yarn"
     exit 1
 esac

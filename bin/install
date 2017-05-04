@@ -2,25 +2,32 @@
 
 case "$1" in
   home)
-    source $HOME/.files/scripts/install_home.sh
+    $HOME/.files/scripts/install_home.sh
     ;;
   brew)
-    source $HOME/.files/scripts/install_brew.sh
+    $HOME/.files/scripts/install_brew.sh
+    ;;
+  nvm)
+    $HOME/.files/scripts/install_nvm.sh
     ;;
   packages)
-    source $HOME/.files/scripts/install_packages.sh
+    $HOME/.files/scripts/run_on_data.sh brew install $HOME/.files/data/brew
+    $HOME/.files/scripts/run_on_data.sh brew cask install $HOME/.files/data/cask
+    $HOME/.files/scripts/run_on_data.sh yarn global add $HOME/.files/data/yarn
+    $HOME/.files/scripts/run_on_data.sh apm install $HOME/.files/data/apm
     ;;
   all)
-    source $HOME/.files/scripts/install_brew.sh
-    source $HOME/.files/scripts/install_brew.sh
-    source $HOME/.files/scripts/install_packages.sh
+    $HOME/.files/scripts/install_home.sh
+    $HOME/.files/scripts/install_brew.sh
+    $HOME/.files/scripts/install_nvm.sh
     ;;
   *)
     echo $"Usage: $0 [command]
   home        install home directory scripts
   brew        install homebrew package manager
+  nvm         install node version manager
   crontab     create cronjob that runs ~/.login on reboot
   packages    install packages for apm, homebrew, homebrew caskroom and yarn
-  all         run all tasks"
+  all         run all tasks -- except packages"
     exit 1
 esac
