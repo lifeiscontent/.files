@@ -1,14 +1,11 @@
 #!/bin/bash
 
 case "$1" in
-  home)
-    $HOME/.files/scripts/install_home.sh
-    ;;
   brew)
     $HOME/.files/scripts/install_brew.sh
     ;;
-  nvm)
-    $HOME/.files/scripts/install_nvm.sh
+  home)
+    $HOME/.files/scripts/install_home.sh
     ;;
   packages)
     $HOME/.files/scripts/run_on_data.sh brew install $HOME/.files/data/brew
@@ -19,13 +16,11 @@ case "$1" in
   all)
     $HOME/.files/scripts/install_home.sh
     $HOME/.files/scripts/install_brew.sh
-    $HOME/.files/scripts/install_nvm.sh
     ;;
   *)
     echo $"Usage: $0 [command]
-  home        install home directory scripts
   brew        install homebrew package manager
-  nvm         install node version manager
+  home        install home directory scripts
   crontab     create cronjob that runs ~/.login on reboot
   packages    install packages for apm, homebrew, homebrew caskroom and yarn
   all         run all tasks -- except packages"
