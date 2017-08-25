@@ -1,8 +1,7 @@
-bower
 create-react-app
 electron
-electron-packager
-elm
 eslint
-eslint-plugin-react
-react-native-cli
+flow-typed
+foreman
+postgraphile
+postgraphql
