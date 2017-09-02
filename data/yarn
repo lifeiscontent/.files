@@ -1,3 +1,4 @@
+babel-cli
 create-react-app
 electron
 eslint
@@ -5,3 +6,4 @@ flow-typed
 foreman
 postgraphile
 postgraphql
+serve
