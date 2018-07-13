@@ -18,6 +18,5 @@ pixman
 pkg-config
 tig
 watchman
-wine --without-x11
 xz
 yarn

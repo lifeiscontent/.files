@@ -1,9 +1,6 @@
 #!/bin/bash
 
 case "$1" in
-  apm)
-    $HOME/.files/scripts/run_on_data.sh apm upgrade $HOME/.files/data/apm
-    ;;
   brew)
     $HOME/.files/scripts/run_on_data.sh brew upgrade $HOME/.files/data/brew
     ;;
@@ -21,7 +18,6 @@ case "$1" in
     ;;
   *)
     echo $"Usage: $0 [command]
-  apm         upgrade all apm packages.
   brew        upgrade all homebrew packages.
   cask        upgrade all homebrew cask packages.
   yarn        upgrade all yarn packages.
