@@ -25,7 +25,6 @@ case "$1" in
     echo $"Usage: $0 [command]
   brew        install homebrew package manager
   home        install home directory scripts
-  crontab     create cronjob that runs ~/.login on reboot
   n           install n (version manager for node)
   packages    install packages for apm, homebrew, homebrew caskroom and yarn
   all         run all tasks -- except packages"

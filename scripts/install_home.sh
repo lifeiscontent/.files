@@ -1,3 +1,7 @@
 #!/bin/bash
 
-cp -frv "$HOME/.files/home/" $HOME
+for filename in $HOME/.files/home/.*; do
+    if [ -f $filename ]; then
+        ln -s $filename $HOME/
+    fi
+done
