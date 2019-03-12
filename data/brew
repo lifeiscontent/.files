@@ -2,7 +2,6 @@ bash
 bash-completion
 cairo
 direnv
-dvm
 fontconfig
 freetype
 giflib
