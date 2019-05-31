@@ -14,7 +14,6 @@ case "$1" in
     $HOME/.files/scripts/run_on_data.sh brew install $HOME/.files/data/brew
     $HOME/.files/scripts/run_on_data.sh brew cask install $HOME/.files/data/cask
     $HOME/.files/scripts/run_on_data.sh yarn global add $HOME/.files/data/yarn
-    $HOME/.files/scripts/run_on_data.sh apm install $HOME/.files/data/apm
     ;;
   all)
     $HOME/.files/scripts/install_home.sh
@@ -26,6 +25,6 @@ case "$1" in
   brew        install homebrew package manager
   home        install home directory scripts
   n           install n (version manager for node)
-  packages    install packages for apm, homebrew, homebrew caskroom and yarn
+  packages    install packages for brew, cask and yarn
   all         run all tasks -- except packages"
 esac
