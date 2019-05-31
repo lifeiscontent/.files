@@ -28,5 +28,4 @@ case "$1" in
   n           install n (version manager for node)
   packages    install packages for apm, homebrew, homebrew caskroom and yarn
   all         run all tasks -- except packages"
-    exit 1
 esac
